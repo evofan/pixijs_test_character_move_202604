@@ -12,11 +12,11 @@ const app = new Application();
 // 列車のすべてを格納するコンテナを作成する
 // const trainContainer = new Container();
 
-  // stats
-  let stats = new Stats();
-  stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-  stats.y = 100;
-  document.body.appendChild(stats.dom);
+// stats
+let stats = new Stats();
+stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+stats.y = 100;
+document.body.appendChild(stats.dom);
 
 // Asynchronous IIFE
 // 非同期即時実行関数式
@@ -27,9 +27,14 @@ const app = new Application();
   document.body.appendChild(app.canvas);
 
   // img
+  // bunny
   const texture = await Assets.load("assets/images/bunny.png");
   const bunny = new Sprite(texture);
   app.stage.addChild(bunny);
+  // bg
+  const texture_bg = await Assets.load("assets/images/dungeon.png");
+  const pic_bg = new Sprite(texture_bg);
+  app.stage.addChild(pic_bg);
 
   // text
   const basicText = new Text({
