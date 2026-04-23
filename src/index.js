@@ -5,6 +5,7 @@ import { Application, Assets, Container, Sprite, Text } from "pixi.js";
 import { VERSION } from "pixi.js";
 // import { addStars } from "./addStars";
 import Stats from "stats.js";
+import { STAGES, ASSETS, GAMES } from "./constants";
 
 // PixiJSのアプリを作成する
 const app = new Application();
@@ -53,10 +54,7 @@ document.body.appendChild(stats.dom);
   // addStars(app);
 })();
 
-const GAMES = {
-  FPS: 60, // framerate ex. 30
-};
-
+// stats
 let oldTime = Date.now();
 let ms = 1000;
 let fps = GAMES.FPS;
@@ -82,3 +80,26 @@ requestAnimationFrame(animate);
 
 // PixiJSのバージョンを表示
 console.log(VERSION); // 8.17.1
+
+// asset
+const ASSET_BG = ASSETS.ASSET_BG;
+// const ASSET_OBJ1: string = ASSETS.ASSET_OBJ1;
+const ASSET_OBJ2 = ASSETS.ASSET_OBJ2;
+const ASSET_OBJ3 = ASSETS.ASSET_OBJ3;
+const ASSET_OBJ4 = ASSETS.ASSET_OBJ4;
+const ASSET_OBJ5 = ASSETS.ASSET_OBJ5;
+const ASSET_OBJ6 = ASSETS.ASSET_OBJ6;
+const ASSET_OBJ7 = ASSETS.ASSET_OBJ7;
+const ASSET_OBJ8 = ASSETS.ASSET_OBJ8;
+
+const ASSET_OBJ9 = ASSETS.ASSET_OBJ9;
+const ASSET_OBJ10 = ASSETS.ASSET_OBJ10;
+
+const ASSET_OBJ11 = ASSETS.ASSET_OBJ11;
+const ASSET_OBJ12 = ASSETS.ASSET_OBJ12;
+const ASSET_OBJ13 = ASSETS.ASSET_OBJ13;
+
+const ASSET_OBJ14 = ASSETS.ASSET_OBJ14;
+
+const ASSET_OBJ15 = ASSETS.ASSET_OBJ15;
+const ASSET_OBJ16 = ASSETS.ASSET_OBJ16;
