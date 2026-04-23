@@ -23,3 +23,11 @@ reference
 
 **PixiJS v8のマイグレーションガイドを読んでみる**  
 [https://zenn.dev/chiietc/articles/2e9295eca42843](https://zenn.dev/chiietc/articles/2e9295eca42843)  
+
+**pixijs_test_character_move**  
+[https://github.com/evofan/pixijs_test_character_move](https://github.com/evofan/pixijs_test_character_move)  
+>  PixiJS 6.2.1 - ✰ WebGL 2 ✰
+
+
+
+
