@@ -1,6 +1,3 @@
-// reference URL
-// https://pixijs.com/8.x/tutorials/choo-choo-train
-
 import { Application, Assets, Container, Sprite, Text } from "pixi.js";
 import { VERSION } from "pixi.js";
 // import { addStars } from "./addStars";
@@ -9,15 +6,6 @@ import { STAGES, ASSETS, GAMES } from "./constants";
 
 // PixiJSのアプリを作成する
 const app = new Application();
-
-// 列車のすべてを格納するコンテナを作成する
-// const trainContainer = new Container();
-
-// stats
-let stats = new Stats();
-stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-stats.y = 100;
-document.body.appendChild(stats.dom);
 
 // Asynchronous IIFE
 // 非同期即時実行関数式
@@ -55,6 +43,11 @@ document.body.appendChild(stats.dom);
 })();
 
 // stats
+let stats = new Stats();
+stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+stats.y = 100;
+document.body.appendChild(stats.dom);
+
 let oldTime = Date.now();
 let ms = 1000;
 let fps = GAMES.FPS;
@@ -103,3 +96,30 @@ const ASSET_OBJ14 = ASSETS.ASSET_OBJ14;
 
 const ASSET_OBJ15 = ASSETS.ASSET_OBJ15;
 const ASSET_OBJ16 = ASSETS.ASSET_OBJ16;
+
+// constant
+const WIDTH = STAGES.WIDTH;
+const HEIGHT = STAGES.HEIGHT;
+const BG_COLOR = STAGES.BG_COLOR;
+
+const BOUNDARY_RANGE_X = 28;
+const BOUNDARY_RANGE_Y = 10;
+const BOUNDARY_RANGE_WIDTH = 488;
+const BOUNDARY_RANGE_HEIGHT = 488;
+
+const FIRST = 1;
+const NOT_FIRST = 2;
+
+// container
+// let container = new PIXI.Container();
+let container = new Container();
+container.width = WIDTH;
+container.height = HEIGHT;
+container.x = 0;
+container.y = 0;
+container.pivot.x = 0.5;
+container.pivot.y = 0.5;
+container.interactive = false;
+container.interactiveChildren = true;
+container.buttonMode = false;
+app.stage.addChild(container);
