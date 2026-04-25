@@ -1,4 +1,4 @@
-import { Application, Assets, Container, Sprite, Text } from "pixi.js";
+import { Application, Assets, Container, Sprite, Text, Graphics } from "pixi.js";
 import { VERSION } from "pixi.js";
 // import { addStars } from "./addStars";
 import Stats from "stats.js";
@@ -123,3 +123,85 @@ container.interactive = false;
 container.interactiveChildren = true;
 container.buttonMode = false;
 app.stage.addChild(container);
+
+
+///----------------------------------------------------------
+// init
+let bg;
+
+let gameState= "init";
+let gameLoopFlag = false;
+
+let gameScene = new Container();
+let gameOverScene = new Container();
+let gameClearScene= new Container();
+let message_gameover;
+let message_gameclear;
+
+// game sprite
+let dungeon;
+let door;
+let explorer;
+let treasure;
+
+// explorer
+let explorer_vx = 0,
+  explorer_vy = 0,
+  explorer_speed = 3;
+
+// blobs
+let numberOfBlobs = 6,
+  blobs = [],
+  blob_spacing = 48,
+  blob_xOffset = 100,
+  blob_speed = 2,
+  blob_direction = 1,
+  blob_vy = [];
+
+// dragon
+let dragon;
+let dragonfire;
+let dragonfireFlag = true;
+
+// hp bar
+let healthBar = new Container();
+let innerBar = new Graphics();
+let outerBar = new Graphics();
+let maxHP = 120;
+
+// arrow for cursor-key use
+let arrow_white_left,
+  arrow_white_up,
+  arrow_white_right,
+  arrow_white_down,
+  arrow_red_left,
+  arrow_red_up,
+  arrow_red_right,
+  arrow_red_down;
+
+// arrow for pad use
+let pad_circle,
+  pad_arrow_right,
+  pad_arrow_left,
+  pad_arrow_up,
+  pad_arrow_down;
+
+// bgm button
+let bt_bgm_on;
+let bt_bgm_off;
+let bgmFlag = false;
+let sound_bgm;
+
+// se
+let se1;
+let se2;
+let se2Flag = true;
+
+// text
+let text_pixiVersion,
+  text_gameTitle,
+  text_hp,
+  text_fps,
+  text_bgm;
+let text_hp_num;
+let text_loadi;
